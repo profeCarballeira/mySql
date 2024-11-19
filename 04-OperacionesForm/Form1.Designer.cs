@@ -104,6 +104,7 @@
             // 
             txtBirthDate.Location = new Point(519, 60);
             txtBirthDate.Name = "txtBirthDate";
+            txtBirthDate.PlaceholderText = "dd/mm/aa";
             txtBirthDate.Size = new Size(100, 23);
             txtBirthDate.TabIndex = 7;
             // 
