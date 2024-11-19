@@ -34,9 +34,13 @@ class Programa
                 }
 
                 // **Operación de Inserción (Insert)**  
-                string insertQuery = "INSERT INTO employees (FirstName, LastName, BirthDate) VALUES ('Juan', 'Pérez', '2024-11-12')";
+                string insertQuery = "INSERT INTO employees (FirstName, LastName, BirthDate) VALUES (@firstName, @lastName, @birthDate)";
                 using (MySqlCommand cmdInsert = new MySqlCommand(insertQuery, conn))
                 {
+                    cmdInsert.Parameters.AddWithValue("@firstName", "Juan");
+                    cmdInsert.Parameters.AddWithValue("@lastName", "Pérez");
+                    cmdInsert.Parameters.AddWithValue("@birthDate", "2024-11-12");
+
                     cmdInsert.ExecuteNonQuery(); // Ejecutar la inserción
                 }
 
@@ -48,10 +52,16 @@ class Programa
                 }
 
                 // **Operación de Modificación (Update)**
-                string updateQuery = "UPDATE employees SET FirstName = 'Carlos' WHERE EmployeeID = 30";
-                using (MySqlCommand cmdUpdate = new MySqlCommand(updateQuery, conn))
+                string updateQuery = "UPDATE employees SET FirstName = @firstName WHERE EmployeeID = @employeeID";
+                using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, conn))
                 {
-                    cmdUpdate.ExecuteNonQuery(); // Ejecutar la actualización
+                    updateCommand.Parameters.AddWithValue("@firstName", "Carlos");
+                    updateCommand.Parameters.AddWithValue("@employeeID", 3);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, conn);
+                    adapter.UpdateCommand = updateCommand;
+
+                    adapter.Update(dataSet.Tables["employees"]); // Actualizar el DataSet
                 }
 
                 // Actualizar el DataSet después de la modificación
@@ -62,10 +72,15 @@ class Programa
                 }
 
                 // **Operación de Borrado (Delete)**
-                string deleteQuery = "DELETE FROM employees WHERE EmployeeID = 29";
-                using (MySqlCommand cmdDelete = new MySqlCommand(deleteQuery, conn))
+                string deleteQuery = "DELETE FROM employees WHERE EmployeeID = @employeeID";
+                using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, conn))
                 {
-                    cmdDelete.ExecuteNonQuery(); // Ejecutar la eliminación
+                    deleteCommand.Parameters.AddWithValue("@employeeID", 12);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, conn);
+                    adapter.DeleteCommand = deleteCommand;
+
+                    adapter.Update(dataSet.Tables["employees"]); // Actualizar el DataSet
                 }
 
                 // Actualizar el DataSet después de la eliminación
