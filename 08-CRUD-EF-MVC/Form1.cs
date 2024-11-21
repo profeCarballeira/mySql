@@ -27,5 +27,16 @@ namespace CRUD.Views {
         {
             dgvEmployees.DataSource = _controller.GetAllEmployees();
         }
+
+        private void dgvEmployees_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvEmployees.SelectedRows.Count > 0)
+            {
+                var row = dgvEmployees.SelectedRows[0];
+                txtFirstName.Text = row.Cells["FirstName"].Value.ToString();
+                txtLastName.Text = row.Cells["LastName"].Value.ToString();
+                dtpBirthDate.Value = Convert.ToDateTime(row.Cells["BirthDate"].Value);
+            }
+        }
     }
 }
