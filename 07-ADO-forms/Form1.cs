@@ -21,7 +21,7 @@ namespace _07_ADO_forms
                 {
                     // Abrir la conexión
                     conn.Open();
-                    Console.WriteLine("Conectado con éxito");
+                   //MessageBox.Show("Conectado con éxito");
 
                     // Crear un DataSet para almacenar los datos
                     DataSet dataSet = new DataSet();
@@ -70,7 +70,7 @@ namespace _07_ADO_forms
                 {
                     // Abrir la conexión
                     conn.Open();
-                    Console.WriteLine("Conectado con éxito");
+                   //MessageBox.Show("Conectado con éxito");
 
                     // Crear un DataSet para almacenar los datos
                     DataSet dataSet = new DataSet();
@@ -101,13 +101,13 @@ namespace _07_ADO_forms
                     //// **Verificar los datos actualizados en el DataTable**
                     //foreach (DataRow row in employeesTable.Rows)
                     //{
-                    //    Console.WriteLine($"ID: {row["EmployeeID"]}, Nombre: {row["FirstName"]} {row["LastName"]}");
+                    //   MessageBox.Show($"ID: {row["EmployeeID"]}, Nombre: {row["FirstName"]} {row["LastName"]}");
                     //}
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Excepción: {ex.ToString()}");
+               MessageBox.Show($"Excepción: {ex.ToString()}");
             }
         }
 
@@ -234,7 +234,7 @@ namespace _07_ADO_forms
                     //// (Opcional) Verificar los datos restantes en el DataTable
                     //foreach (DataRow row in employeesTable.Rows)
                     //{
-                    //    Console.WriteLine($"ID: {row["EmployeeID"]}, Nombre: {row["FirstName"]} {row["LastName"]}");
+                    //   MessageBox.Show($"ID: {row["EmployeeID"]}, Nombre: {row["FirstName"]} {row["LastName"]}");
                     //}
                 }
             }

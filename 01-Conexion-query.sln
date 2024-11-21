@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-ADO.net parámetros", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-ADO-forms", "07-ADO-forms\07-ADO-forms.csproj", "{6A988998-AAE7-46B4-BC89-E3961DD05290}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-CRUD-EF-MVC", "08-CRUD-EF-MVC\08-CRUD-EF-MVC.csproj", "{A90A6702-536B-4F4B-BA99-298E69961F15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{6A988998-AAE7-46B4-BC89-E3961DD05290}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A988998-AAE7-46B4-BC89-E3961DD05290}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A988998-AAE7-46B4-BC89-E3961DD05290}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A90A6702-536B-4F4B-BA99-298E69961F15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90A6702-536B-4F4B-BA99-298E69961F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90A6702-536B-4F4B-BA99-298E69961F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90A6702-536B-4F4B-BA99-298E69961F15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
