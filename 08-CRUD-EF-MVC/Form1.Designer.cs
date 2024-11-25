@@ -81,28 +81,31 @@
             // 
             btnAdd.Location = new Point(262, 216);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(66, 28);
+            btnAdd.Size = new Size(78, 28);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Agregar";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnUpdate
             // 
             btnUpdate.Location = new Point(262, 248);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(66, 28);
+            btnUpdate.Size = new Size(78, 28);
             btnUpdate.TabIndex = 5;
             btnUpdate.Text = "Actualizar";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnDelete
             // 
             btnDelete.Location = new Point(262, 281);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(66, 28);
+            btnDelete.Size = new Size(78, 28);
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Eliminar";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // lblFirstName
             // 
