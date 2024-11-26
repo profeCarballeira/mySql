@@ -1,0 +1,59 @@
+﻿<#@ template language="C#" debug="false" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<# 
+// Parámetros de configuración
+string modelName = "Employee"; // Nombre de tu modelo (singular)
+string modelPlural = "Employees"; // Nombre plural de la tabla
+string DBContextClass = "w3schoolsContext"; // Nombre de la clase de contexto
+string namespaceName = "cambiar_namespace";  // Espacio de nombres del proyecto
+#>
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using <#= namespaceName #>.Modelss;
+
+namespace <#= namespaceName #>
+{
+    public class <#= modelName #>Controller
+    {
+        private <#= DBContextClass #> _context;
+
+        public <#= modelName #>Controller()
+        {
+            _context = new <#= DBContextClass #>();
+        }
+
+        public List<<#= modelName #>> GetAll<#= modelPlural #>()
+        {
+            return _context.<#= modelPlural #>.ToList();
+        }
+
+        public void Add<#= modelName #>(<#= modelName #> <#= modelName.ToLower() #>)
+        {
+            _context.<#= modelPlural #>.Add(<#= modelName.ToLower() #>);
+            _context.SaveChanges();
+        }
+
+        public void Update<#= modelName #>(<#= modelName #> <#= modelName.ToLower() #>)
+        {
+            var existing<#= modelName #> = _context.<#= modelPlural #>.Find(<#= modelName.ToLower() #>.EmployeeId);
+            if (existing<#= modelName #> != null)
+            {
+                // Mapear las propiedades actualizadas aquí
+                _context.SaveChanges();
+            }
+        }
+
+        public void Delete<#= modelName #>(int <#= modelName.ToLower() #>Id)
+        {
+            var <#= modelName.ToLower() #> = _context.<#= modelPlural #>.Find(<#= modelName.ToLower() #>Id);
+            if (<#= modelName.ToLower() #> != null)
+            {
+                _context.<#= modelPlural #>.Remove(<#= modelName.ToLower() #>);
+                _context.SaveChanges();
+            }
+        }
+    }
+}
