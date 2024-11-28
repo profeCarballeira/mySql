@@ -18,6 +18,10 @@ dotnet ef dbcontext scaffold "server=localhost;port=3307;user=dam2;password=abc1
 	Usar la plantilla "controlador.tt" para generar los controladores necesarios (en este caso employees)
     Copiar el fichero generado Controlador.cs al exterior (mediante explorador de archivos) y cambiar espacio de nombres
 
+    Mapear las propiedades a actualizar en el Update, en nuestro caso:
+existingEmployee.FirstName = employee.FirstName;
+existingEmployee.LastName = employee.LastName;
+existingEmployee.BirthDate = employee.BirthDate;
 
 
 	--------controlador.tt-----------------------------------------------------------

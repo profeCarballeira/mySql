@@ -31,6 +31,9 @@ namespace _10_CRUD_MVC_EF_auto
             if (existingEmployee != null)
             {
                 // Mapear las propiedades actualizadas aquí
+                existingEmployee.FirstName = employee.FirstName;
+                existingEmployee.LastName = employee.LastName;
+                existingEmployee.BirthDate = employee.BirthDate;
                 _context.SaveChanges();
             }
         }
