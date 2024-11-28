@@ -76,6 +76,7 @@
             btnDelete.TabIndex = 16;
             btnDelete.Text = "Eliminar";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
@@ -85,6 +86,7 @@
             btnUpdate.TabIndex = 15;
             btnUpdate.Text = "Actualizar";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnAdd
             // 
@@ -94,6 +96,7 @@
             btnAdd.TabIndex = 14;
             btnAdd.Text = "Agregar";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // dtpBirthDate
             // 
@@ -129,6 +132,7 @@
             dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmployees.Size = new Size(394, 188);
             dgvEmployees.TabIndex = 10;
+            dgvEmployees.SelectionChanged += dgvEmployees_SelectionChanged;
             // 
             // Form1
             // 
