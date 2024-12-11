@@ -108,10 +108,35 @@ namespace _12_EF_linq_category
 
             //select mas de un campo con var
             var cat_id_nombre = _context.Categories.Select(e => new { e.CategoryId, e.CategoryName }).ToList();
-            foreach (var c in cat_id_nombre) {
+            foreach (var c in cat_id_nombre)
+            {
                 Debug.WriteLine($"ID: {c.CategoryId} Nombre: {c.CategoryName}");
             }
 
+        }
+
+        private void btnSelectWhere_Click(object sender, EventArgs e)
+        {
+            w3schoolsContext _context = new w3schoolsContext();
+
+            //where
+            var cat_nombre_descripc = _context.Categories.Where(e => e.CategoryId > 5)
+                                            .Select(e => new { e.CategoryName, e.Description })
+                                            .ToList();
+
+            foreach (var c in cat_nombre_descripc)
+            {
+                Debug.WriteLine($"Nombre: {c.CategoryName}, Descrpición: {c.Description}");
+            }
+
+            //se pueden combinar
+            //otras operaciones: OrderBy, Join, GroupBy, Count...
+            //Eager Loading con Include....
+
+            //Unir Tablas(Join):
+            //var resultado = from emp in context.Employees
+            //    join dept in context.Departments on emp.DepartmentId equals dept.DepartmentId
+            //    select new { emp.FirstName, dept.Name };
         }
     }
 }

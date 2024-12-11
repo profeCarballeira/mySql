@@ -38,6 +38,7 @@
             dgvCategories = new DataGridView();
             btnLINQwhere = new Button();
             btnLINQselect = new Button();
+            btnSelectWhere = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCategories).BeginInit();
             SuspendLayout();
             // 
@@ -137,11 +138,22 @@
             btnLINQselect.UseVisualStyleBackColor = true;
             btnLINQselect.Click += button2_Click;
             // 
+            // btnSelectWhere
+            // 
+            btnSelectWhere.Location = new Point(465, 124);
+            btnSelectWhere.Name = "btnSelectWhere";
+            btnSelectWhere.Size = new Size(137, 28);
+            btnSelectWhere.TabIndex = 29;
+            btnSelectWhere.Text = "LINQ select-where";
+            btnSelectWhere.UseVisualStyleBackColor = true;
+            btnSelectWhere.Click += btnSelectWhere_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSelectWhere);
             Controls.Add(btnLINQselect);
             Controls.Add(btnLINQwhere);
             Controls.Add(lblLastName);
@@ -171,5 +183,6 @@
         private DataGridView dgvCategories;
         private Button btnLINQwhere;
         private Button btnLINQselect;
+        private Button btnSelectWhere;
     }
 }
