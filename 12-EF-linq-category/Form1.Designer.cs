@@ -36,8 +36,8 @@
             txtDescripcionCateg = new TextBox();
             txtNombreCateg = new TextBox();
             dgvCategories = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
+            btnLINQwhere = new Button();
+            btnLINQselect = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCategories).BeginInit();
             SuspendLayout();
             // 
@@ -117,33 +117,33 @@
             dgvCategories.TabIndex = 19;
             dgvCategories.SelectionChanged += dgvCategories_SelectionChanged;
             // 
-            // button1
+            // btnLINQwhere
             // 
-            button1.Location = new Point(465, 27);
-            button1.Name = "button1";
-            button1.Size = new Size(137, 28);
-            button1.TabIndex = 27;
-            button1.Text = "LINQ where";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnLINQwhere.Location = new Point(465, 27);
+            btnLINQwhere.Name = "btnLINQwhere";
+            btnLINQwhere.Size = new Size(137, 28);
+            btnLINQwhere.TabIndex = 27;
+            btnLINQwhere.Text = "LINQ where";
+            btnLINQwhere.UseVisualStyleBackColor = true;
+            btnLINQwhere.Click += button1_Click;
             // 
-            // button2
+            // btnLINQselect
             // 
-            button2.Location = new Point(465, 75);
-            button2.Name = "button2";
-            button2.Size = new Size(137, 28);
-            button2.TabIndex = 28;
-            button2.Text = "LINQ select";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnLINQselect.Location = new Point(465, 75);
+            btnLINQselect.Name = "btnLINQselect";
+            btnLINQselect.Size = new Size(137, 28);
+            btnLINQselect.TabIndex = 28;
+            btnLINQselect.Text = "LINQ select";
+            btnLINQselect.UseVisualStyleBackColor = true;
+            btnLINQselect.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnLINQselect);
+            Controls.Add(btnLINQwhere);
             Controls.Add(lblLastName);
             Controls.Add(lblFirstName);
             Controls.Add(btnDelete);
@@ -169,7 +169,7 @@
         private TextBox txtDescripcionCateg;
         private TextBox txtNombreCateg;
         private DataGridView dgvCategories;
-        private Button button1;
-        private Button button2;
+        private Button btnLINQwhere;
+        private Button btnLINQselect;
     }
 }

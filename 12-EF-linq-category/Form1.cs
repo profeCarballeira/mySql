@@ -97,6 +97,20 @@ namespace _12_EF_linq_category
 
         private void button2_Click(object sender, EventArgs e)
         {
+            w3schoolsContext _context = new w3schoolsContext();
+
+            //select de 1 campo
+            List<string?> nombreCat = _context.Categories.Select(e => e.CategoryName).ToList();
+            foreach (var nombre in nombreCat)
+            {
+                Debug.WriteLine($"Nombre categoria: {nombre}");
+            }
+
+            //select mas de un campo con var
+            var cat_id_nombre = _context.Categories.Select(e => new { e.CategoryId, e.CategoryName }).ToList();
+            foreach (var c in cat_id_nombre) {
+                Debug.WriteLine($"ID: {c.CategoryId} Nombre: {c.CategoryName}");
+            }
 
         }
     }
