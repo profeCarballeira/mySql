@@ -1,1 +1,11 @@
-﻿
+﻿	Instalamos usando nuget:
+Microsoft.EntityFrameworkCore (versión acorde a nuestro net core "6")
+Microsoft.EntityFrameworkCore.Design (idem versión "6")
+Pomelo.EntityFrameworkCore.MySql (idem versión "6")
+	Grabar el proyecto (save all)
+	Lanzamos "desde la carpeta del proyecto" el comando:
+dotnet ef dbcontext scaffold "server=localhost;port=3307;user=dam2;password=abc123.;database=w3schools"  Pomelo.EntityFrameworkCore.MySql -o Modelss
+	Comprobamos que ha creado una carpeta Models con modelos y DBContext
+
+	Usar la plantilla "controlador.tt" para generar los controladores necesarios (en este caso employees)
+    Copiar el fichero generado Controlador.cs al exterior (mediante explorador de archivos) y cambiar espacio de nombres...
