@@ -119,7 +119,7 @@ namespace _12_EF_linq_category
         {
             w3schoolsContext _context = new w3schoolsContext();
 
-            //where
+            //where-select
             var cat_nombre_descripc = _context.Categories.Where(e => e.CategoryId > 5)
                                             .Select(e => new { e.CategoryName, e.Description })
                                             .ToList();
@@ -137,6 +137,56 @@ namespace _12_EF_linq_category
             //var resultado = from emp in context.Employees
             //    join dept in context.Departments on emp.DepartmentId equals dept.DepartmentId
             //    select new { emp.FirstName, dept.Name };
+        }
+
+        private void btn_linq_fluido_Click(object sender, EventArgs e)
+        {
+            w3schoolsContext _context = new w3schoolsContext();
+            var query = _context.Products
+            .Join(
+                _context.Categories,                   // Tabla a unir (Categories)
+                product => product.CategoryId,         // Clave foránea en Products
+                category => category.CategoryId,       // Clave primaria en Categories
+                (product, category) => new             // Proyección después del Join
+                {
+                    product.ProductName,
+                    product.Price,
+                    category.Description
+                }
+            )
+            .Where(pc => pc.Description.Contains("fish"))  // Filtro: descripción de la categoría contiene "fish"
+            .Select(pc => new                          // Selección de los campos que se necesitan
+            {
+                ProductName = pc.ProductName,
+                Price = pc.Price,
+                CategoryDescription = pc.Description
+            })
+            .ToList();  // Ejecuta la consulta y obtiene los resultados
+
+            foreach (var item in query)
+            {
+                Debug.WriteLine($"Producto: {item.ProductName}, Precio: {item.Price}, Descripcion de Categoría: {item.CategoryDescription}");
+            }
+        }
+
+        private void btn_linq_declarativo_Click(object sender, EventArgs e)
+        {
+            w3schoolsContext _context = new w3schoolsContext();
+            var query = from product in _context.Products
+                        join category in _context.Categories
+                        on product.CategoryId equals category.CategoryId
+                        where category.Description.Contains("fish")
+                        select new
+                        {
+                            ProductName = product.ProductName,
+                            Price = product.Price,
+                            CategoryDescription = category.Description
+                        };
+
+            foreach (var item in query)
+            {
+                Debug.WriteLine($"Producto: {item.ProductName}, Precio: {item.Price}, Descripción de Categoría: {item.CategoryDescription}");
+            }
         }
     }
 }

@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11-lambda-linq", "11-lambda
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12-EF-linq-category", "12-EF-linq-category\12-EF-linq-category.csproj", "{D88959F6-DB79-416A-B1E5-30E2B4F36C52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-Navegacion-registros-EF", "13-Navegacion-registros-EF\13-Navegacion-registros-EF.csproj", "{7894C951-61E2-4081-AEC5-875241D3C47F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{D88959F6-DB79-416A-B1E5-30E2B4F36C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D88959F6-DB79-416A-B1E5-30E2B4F36C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D88959F6-DB79-416A-B1E5-30E2B4F36C52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7894C951-61E2-4081-AEC5-875241D3C47F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7894C951-61E2-4081-AEC5-875241D3C47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7894C951-61E2-4081-AEC5-875241D3C47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7894C951-61E2-4081-AEC5-875241D3C47F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

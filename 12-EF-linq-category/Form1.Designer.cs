@@ -39,6 +39,8 @@
             btnLINQwhere = new Button();
             btnLINQselect = new Button();
             btnSelectWhere = new Button();
+            btn_linq_fluido = new Button();
+            btn_linq_declarativo = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCategories).BeginInit();
             SuspendLayout();
             // 
@@ -148,11 +150,33 @@
             btnSelectWhere.UseVisualStyleBackColor = true;
             btnSelectWhere.Click += btnSelectWhere_Click;
             // 
+            // btn_linq_fluido
+            // 
+            btn_linq_fluido.Location = new Point(465, 183);
+            btn_linq_fluido.Name = "btn_linq_fluido";
+            btn_linq_fluido.Size = new Size(137, 28);
+            btn_linq_fluido.TabIndex = 30;
+            btn_linq_fluido.Text = "LINQ-JOIN fluiido";
+            btn_linq_fluido.UseVisualStyleBackColor = true;
+            btn_linq_fluido.Click += btn_linq_fluido_Click;
+            // 
+            // btn_linq_declarativo
+            // 
+            btn_linq_declarativo.Location = new Point(465, 235);
+            btn_linq_declarativo.Name = "btn_linq_declarativo";
+            btn_linq_declarativo.Size = new Size(137, 28);
+            btn_linq_declarativo.TabIndex = 31;
+            btn_linq_declarativo.Text = "LINQ-JOIN declarativo";
+            btn_linq_declarativo.UseVisualStyleBackColor = true;
+            btn_linq_declarativo.Click += btn_linq_declarativo_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btn_linq_declarativo);
+            Controls.Add(btn_linq_fluido);
             Controls.Add(btnSelectWhere);
             Controls.Add(btnLINQselect);
             Controls.Add(btnLINQwhere);
@@ -184,5 +208,7 @@
         private Button btnLINQwhere;
         private Button btnLINQselect;
         private Button btnSelectWhere;
+        private Button btn_linq_fluido;
+        private Button btn_linq_declarativo;
     }
 }
