@@ -9,3 +9,52 @@ dotnet ef dbcontext scaffold "server=localhost;port=3307;user=dam2;password=abc1
 
 	Usar la plantilla "controlador.tt" para generar los controladores necesarios (en este caso employees)
     Copiar el fichero generado Controlador.cs al exterior (mediante explorador de archivos) y cambiar espacio de nombres...
+
+	Crear el inteface con los campos de texto que queremos ver y por ejempl 4 botonse (first, last, next...)
+	Establecer el control BindingSource, y el enlace con la propiedad text del control:
+ --------------------------------- 
+ private CustomerController _controller;
+
+        private BindingSource _bindingSource;
+
+        public Form1()
+        {
+            InitializeComponent();
+            _controller = new CustomerController();
+            LoadData();
+            SetupDataBindings();
+        }
+        private void LoadData()
+        {
+            _bindingSource = new BindingSource();
+            _bindingSource.DataSource = _controller.GetAllCustomers();
+        }
+        private void SetupDataBindings()
+        {
+            //configurar los DataBindings para los TextBox
+            txtNombre.DataBindings.Add("Text", _bindingSource, "CustomerName");
+            txtDireccion.DataBindings.Add("Text", _bindingSource, "Address");
+        }
+    ---------------------------------
+        Asociar los Move...() del BindingSource a cada uno de los botones de navegación
+    _________________________________
+     private void btnFirst_Click(object sender, EventArgs e)
+        {
+            _bindingSource.MoveFirst();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            _bindingSource.MovePrevious();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            _bindingSource.MoveNext();
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            _bindingSource.MoveLast();
+        }
+    _________________________________
