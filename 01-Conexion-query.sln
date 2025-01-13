@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12-EF-linq-category", "12-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-Navegacion-registros-EF", "13-Navegacion-registros-EF\13-Navegacion-registros-EF.csproj", "{7894C951-61E2-4081-AEC5-875241D3C47F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14-DataGrid", "14-DataGrid\14-DataGrid.csproj", "{9B5F81E5-37E7-40DB-AE6E-B5D3E022CEBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{7894C951-61E2-4081-AEC5-875241D3C47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7894C951-61E2-4081-AEC5-875241D3C47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7894C951-61E2-4081-AEC5-875241D3C47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5F81E5-37E7-40DB-AE6E-B5D3E022CEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5F81E5-37E7-40DB-AE6E-B5D3E022CEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5F81E5-37E7-40DB-AE6E-B5D3E022CEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5F81E5-37E7-40DB-AE6E-B5D3E022CEBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
