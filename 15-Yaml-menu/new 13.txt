@@ -1,0 +1,5 @@
+host: "locahost"
+port: 3307
+user: "profe"
+password: "abc123."
+database: "mi_Proyecto"

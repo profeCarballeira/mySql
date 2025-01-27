@@ -1,0 +1,30 @@
+﻿Para leer un fichero yaml de configuración a través de un menú
+1 Crear un proyecto windows form
+2 Insertar un menú (mainMenu), con una opción y programar su click
+3 Crear un fichero yaml (DataBaseConfig.yaml) (para ejecución meterlo en bin/debug...)
+4 Crear una clase DatabaseConfig para mapear (deserialize) el contenido del yaml
+5 En el gestor de paquetes NuGet insertar YamlDotNet
+5 incluir las librerías: 
+	using YamlDotNet.Serialization;
+    using YamlDotNet.Serialization.NamingConventions;
+6 Código del evento click del menú:
+            try
+            {
+                // Leer el archivo YAML
+                var deserializer = new DeserializerBuilder()
+                    .WithNamingConvention(CamelCaseNamingConvention.Instance)
+                    .Build();
+
+                var yamlContent = File.ReadAllText("config.yaml");
+                var config = deserializer.Deserialize<DatabaseConfig>(yamlContent);
+
+                // Mostrar los parámetros cargados
+                MessageBox.Show($"Host: {config.Host}\nUsuario: {config.User}\nBase de Datos: {config.Database}",
+                    "Configuración Cargada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar la configuración: {ex.Message}",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+7 Copiar el fichero de config en bin/debug... y probar
